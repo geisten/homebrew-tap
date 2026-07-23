@@ -2,23 +2,23 @@
 class Geist < Formula
   desc "CPU-first LLM inference engine — single dependency-free binary (GGUF)"
   homepage "https://github.com/geisten/geistlib"
-  version "0.4.0"
+  version "0.5.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/geisten/geistlib/releases/download/v0.4.0/geist-macos-arm64.tar.gz"
-      sha256 "47678006603bbb680a55564cd76cdd7b9f62ad66d2f1355ebadb0c3ac7fbab97"
+      url "https://github.com/geisten/geistlib/releases/download/v0.5.0/geist-macos-arm64.tar.gz"
+      sha256 "37e0e5be94b14a447f8a8238e5660ed27a1d0c48ab27b7ab6f2335bba62abb4a"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/geisten/geistlib/releases/download/v0.4.0/geist-linux-arm64.tar.gz"
-      sha256 "cb8386561c9aa1ca420ba106d9aed9a164a480c2b52551a0b334c6e07e9856a9"
+      url "https://github.com/geisten/geistlib/releases/download/v0.5.0/geist-linux-arm64.tar.gz"
+      sha256 "4d3386d445da3088e6748f91dd798fee8b34b9f80e5254af72e3a9438cc2d1f2"
     end
     on_intel do
-      url "https://github.com/geisten/geistlib/releases/download/v0.4.0/geist-linux-x86_64.tar.gz"
-      sha256 "594da46c557ec808dea8a267e5a5336f3a86a7e4946342998fbc483d9b6a7d18"
+      url "https://github.com/geisten/geistlib/releases/download/v0.5.0/geist-linux-x86_64.tar.gz"
+      sha256 "ee2bdcbef3668d20ff2fbe2d73cb36381ae337665ed0824d78919377aa332ad9"
     end
   end
 
