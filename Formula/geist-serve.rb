@@ -2,28 +2,38 @@
 class GeistServe < Formula
   desc "One local GGUF model behind the Ollama and OpenAI APIs (geist engine)"
   homepage "https://github.com/geisten/geist-serve"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/geisten/geist-serve/releases/download/v0.1.0/geist-serve-macos-arm64"
-      sha256 "5c2396a7293fedb3e6ba34e937f224806d6eeb86e079e2fe0a342b56c147d406"
-    end
+      url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-macos-arm64"
+      sha256 "b1a4862aa75ead70fbc07352e107f9ee023daf332f09750269d7269bddd9a607"
+      resource "geistd" do
+        url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-macos-arm64-geistd"
+        sha256 "a54bf124d8049e2dce9d1722c865b0fdbe75671947b9b73cf33dc9d5424ca0dc"
+      end    end
   end
   on_linux do
     on_intel do
-      url "https://github.com/geisten/geist-serve/releases/download/v0.1.0/geist-serve-linux-x86_64"
-      sha256 "90939cda947504b251c66ca4a6d717849d261f043496b4616ec374e6100bbb26"
-    end
+      url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-linux-x86_64"
+      sha256 "571e74115fd428469b26bdd8ed7d73c01bd560e9a7e356be20dc2ebd9615c378"
+      resource "geistd" do
+        url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-linux-x86_64-geistd"
+        sha256 "ac315b04ce5f3497c18e6bca3530645f4bd533c26664655168f05ae5f5996c71"
+      end    end
     on_arm do
-      url "https://github.com/geisten/geist-serve/releases/download/v0.1.0/geist-serve-linux-aarch64"
-      sha256 "b337ef97a5ed2504ce62cf06f2b16d8ce67c997851084f9c5b0754e9015f0cb2"
-    end
+      url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-linux-aarch64"
+      sha256 "57e704fbc6313d436527e705202f3186db7809fc14d8ece9a85951b34a8ffbb3"
+      resource "geistd" do
+        url "https://github.com/geisten/geist-serve/releases/download/v0.2.0/geist-serve-linux-aarch64-geistd"
+        sha256 "e22bb2b904e0bede070a10d4a7e597c5a8e6c43b0db392cf9a2be1d2fd5391ec"
+      end    end
   end
 
   def install
-    bin.install Dir["geist-serve-*"].first => "geist-serve"
+    bin.install Dir["geist-serve-*"].reject { |f| f.end_with?("-geistd") }.first => "geist-serve"
+    resource("geistd").stage { bin.install Dir["geist-serve-*-geistd"].first => "geistd" } if resources.any? { |r| r.name == "geistd" }
     # brew services runs this wrapper: it reads the model path (and optional
     # flags on a second line) from etc/geist-serve/model, the one file a
     # user edits. Same idea as /etc/default/geist-serve under systemd.
