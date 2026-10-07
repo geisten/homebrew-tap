@@ -13,6 +13,18 @@ Supported: macOS (Apple Silicon), Linux (ARM64, x86-64).
 `Formula/geist.rb` is auto-updated by the release workflow in
 [geisten/geisten](https://github.com/geisten/geisten) — don't edit it here.
 
+## geistr — chat with local models
+
+```bash
+brew install geisten/tap/geistr
+geistr catalog                  # the models, what fits this computer, tokens/s
+geistr pull smollm2-360m        # download and verify
+geistr chat smollm2-360m
+```
+
+Supported: macOS (Apple Silicon), Linux (ARM64, x86-64). `Formula/geistr.rb`
+follows the releases of [geisten/geist-runtime](https://github.com/geisten/geist-runtime).
+
 ## geist-serve — one model behind the Ollama and OpenAI APIs
 
 ```bash
