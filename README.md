@@ -27,6 +27,10 @@ follows the releases of [geisten/geist-runtime](https://github.com/geisten/geist
 
 ## geist-serve — one model behind the Ollama and OpenAI APIs
 
+**Deprecated:** the standalone geist-serve is retired; use `geistr` above.
+Installed copies keep working. The Ollama/OpenAI HTTP API is coming to
+`geistr serve`.
+
 ```bash
 brew install geisten/tap/geist-serve
 echo /path/to/model.gguf > "$(brew --prefix)/etc/geist-serve/model"
