@@ -7,17 +7,17 @@ class Geistr < Formula
   on_macos do
     on_arm do
       url "https://github.com/geisten/geist-runtime/releases/download/v0.1.0/geistr-macos-arm64.tar.gz"
-      sha256 "0123d9b7e8fe175a9776f17ef87b386f1166eec84d85ee190e4cedaff65874a7"
+      sha256 "4e0cb582dd89eae181f686c0a4e1a900e3f12c04eb0408af6fab9a023d5be6bd"
     end
   end
   on_linux do
     on_arm do
       url "https://github.com/geisten/geist-runtime/releases/download/v0.1.0/geistr-linux-arm64.tar.gz"
-      sha256 "997b1978204e9abc8d00684ae7fd1958e5c2b38a94cb42d250addf3ab1897441"
+      sha256 "4aad69e5d4135f8d59fd73aadcf88e24ade8bf2745e7ffee3413c17677e2d212"
     end
     on_intel do
       url "https://github.com/geisten/geist-runtime/releases/download/v0.1.0/geistr-linux-amd64.tar.gz"
-      sha256 "56662b29b3d4a38e6e065ac8778e4a49fe4bf34f1d778ab3987e63ada12b1466"
+      sha256 "fb6b0319e4e0fae396d23cd53efe3d0fc933fda52cfcd7d4ab2b6ce7bcd07475"
     end
   end
 
@@ -31,6 +31,8 @@ class Geistr < Formula
         geistr catalog
         geistr pull smollm2-360m
         geistr chat smollm2-360m
+      The OpenAI and Ollama APIs (replacing geist-serve):
+        geistr serve smollm2-360m --http
     EOS
   end
 
