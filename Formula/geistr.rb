@@ -1,23 +1,23 @@
 class Geistr < Formula
   desc "Local LLM chat, model catalog and service on the geist engine (GGUF)"
   homepage "https://github.com/geisten/geist-runtime"
-  version "0.1.2"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/geisten/geist-runtime/releases/download/v0.1.2/geistr-macos-arm64.tar.gz"
-      sha256 "a76694c0cb4c1538ed87ae2aae43a7b7da19c5ec5d6459dea0160d85d567c552"
+      url "https://github.com/geisten/geist-runtime/releases/download/v0.2.0/geistr-macos-arm64.tar.gz"
+      sha256 "5dbcec52d0454d6fe5b79a7eaad076e34945a8930f0d69478b504816116bfb51"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/geisten/geist-runtime/releases/download/v0.1.2/geistr-linux-arm64.tar.gz"
-      sha256 "33d5066087bbd4b2a35c11562335aeabeefa206befc3fdf75575cb58f98c4175"
+      url "https://github.com/geisten/geist-runtime/releases/download/v0.2.0/geistr-linux-arm64.tar.gz"
+      sha256 "aaa642bfe742f04aeac15793ca22ad2aceee46f219b4e4de4c15ea7cc6ad6720"
     end
     on_intel do
-      url "https://github.com/geisten/geist-runtime/releases/download/v0.1.2/geistr-linux-amd64.tar.gz"
-      sha256 "6d95226c11c3e466b9034dcd6eef69bcbf8edc1f13161c4f06481f20531db29a"
+      url "https://github.com/geisten/geist-runtime/releases/download/v0.2.0/geistr-linux-amd64.tar.gz"
+      sha256 "dfcb2795b96a2e722ea382bf20f6321151b6c759f06e2a768d0f02b3475d1cde"
     end
   end
 
